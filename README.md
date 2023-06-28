@@ -12,3 +12,8 @@ Minecraft plugin - chat visible globally among instances of servers for staff me
    - add or remove ranks
    - do not forget to apply permissions for ranks/groups to your permissions plugin
 5. Reload plugin (/r5chat reload) or restart server if Redis does not run on 127.0.0.1.
+
+# Commands
+
+/r5chat reload
+/ch <local|global>
