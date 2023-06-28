@@ -16,4 +16,5 @@ Minecraft plugin - chat visible globally among instances of servers for staff me
 # Commands
 
 /r5chat reload
+
 /ch <local|global>
