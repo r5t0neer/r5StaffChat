@@ -1,11 +1,11 @@
 package me.r5t0neer.mcp.sc.lst;
 
-import io.papermc.paper.event.player.AsyncChatEvent;
 import me.r5t0neer.mcp.sc.R5StaffChat;
 import me.r5t0neer.mcp.sc.cfg.ConfigManager;
 import me.r5t0neer.mcp.sc.cfg.Rank;
 import me.r5t0neer.mcp.sc.msg.Message;
 import me.r5t0neer.mcp.sc.msg.MessageProducer;
+import io.papermc.paper.event.player.AsyncChatEvent;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
@@ -45,11 +45,12 @@ public class ChatListener implements Listener
         if(!evt.getPlayer().hasPermission(configs.getPrimaryConfig().globalChatPermission))
             return;
 
-        String message = PlainTextComponentSerializer.plainText().serialize(evt.message());
-        if(message.startsWith(configs.getPrimaryConfig().chatCatchPrefix))
+        if(catchPrefixed)
         {
-            if(catchPrefixed)
+            String message = getPlainMessage(evt);
+            if(message.startsWith(configs.getPrimaryConfig().chatCatchPrefix))
             {
+
                 message = message.replace(configs.getPrimaryConfig().chatCatchPrefix, "");
 
                 produceMessage(evt, message);
@@ -61,7 +62,7 @@ public class ChatListener implements Listener
 
         if(catchPlain)
         {
-            produceMessage(evt, message);
+            produceMessage(evt, getPlainMessage(evt));
 
             if(!passthroughPlain)
                 evt.setCancelled(true);
@@ -70,12 +71,17 @@ public class ChatListener implements Listener
         {
             if(redirect.contains(evt.getPlayer()))
             {
-                produceMessage(evt, message);
+                produceMessage(evt, getPlainMessage(evt));
 
                 if(!passthroughSwitch)
                     evt.setCancelled(true);
             }
         }
+    }
+
+    private String getPlainMessage(AsyncChatEvent evt)
+    {
+        return PlainTextComponentSerializer.plainText().serialize(evt.message());
     }
 
     private String getDisplayName(Player plr)
