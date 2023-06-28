@@ -1,0 +1,45 @@
+redis:
+  host: 127.0.0.1
+  port: 6379
+  user: ""
+  password: ""
+  channel: "r5_chat_staff"
+
+server:
+  override-name: false
+  name: "Unknown Server"
+
+chat:
+  # %s -> server name
+  # %d -> rank + player name (see section ranks)
+  # %m -> message
+  format: '&8[&<#ffd700>&lG&8][&7%s&8] %d&8: &f%m'
+  catch:
+    prefix: '!'
+    # plain -> chat messages
+    # prefix -> chat messages prefixed
+    # switch -> chat messages written when staff member enabled redirecting
+    # Supported: plain, prefix, switch
+    sources: ['prefix', 'switch']
+    # Whose messages should be displayed to all players on local server
+    # Supported: plain, switch
+    passthrough: ['plain']
+
+global-chat-permission: "r5chat.global"
+
+# Rank positioned higher is selected if player has multiple rank permissions (like operator)
+ranks:
+  owner:
+    display_name: "&<#1050e0>&lOwner &7%p"
+    permission: "rank.owner"
+  admin:
+    display_name: "&c&lAdmin &7%p"
+    permission: "rank.admin"
+  moderator:
+    display_name: "&2&lMod &7%p"
+    permission: "rank.mod"
+
+# Should be ownership of operator indicated?
+operator:
+  override: true
+  display_name: "&e&lOP &7%p"

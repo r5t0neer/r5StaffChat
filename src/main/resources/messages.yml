@@ -1,0 +1,8 @@
+not-a-player: '&4You must be a player to use the command.'
+no-permission: '&cYou do not have permission to use this command.'
+available-channels: '&cYou need to choose between &elocal &cand &eglobal &cchannels.'
+available-subcommands-header: '&8[&er5StaffChat&8] &aAvailable commands:'
+reload-successful: '&8[&er5StaffChat&8] &aReloaded successfully.'
+reload-error: '&8[&er5StaffChat&8] &cAn exception occurred while reloading, check console for details.'
+switched-to-local: '&aSwitched to server (local) channel.'
+switched-to-global: '&aSwitched to server network (global) channel.'
