@@ -3,8 +3,6 @@ name: r5StaffChat
 version: 1.0
 api-version: 1.19
 author: r5t0neer
-softdepend:
-  - LuckPerms
 commands:
   ch:
   r5chat:

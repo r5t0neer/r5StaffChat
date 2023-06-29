@@ -51,7 +51,7 @@ public class ChatListener implements Listener
             if(message.startsWith(configs.getPrimaryConfig().chatCatchPrefix))
             {
 
-                message = message.replace(configs.getPrimaryConfig().chatCatchPrefix, "");
+                message = message.replaceFirst(configs.getPrimaryConfig().chatCatchPrefix, "");
 
                 produceMessage(evt, message);
                 evt.setCancelled(true);
