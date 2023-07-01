@@ -3,7 +3,7 @@ Minecraft plugin - chat visible globally among instances of servers for staff me
 
 # Prerequisities
 
-Server engine: Purpur/Paper, versions from 1.19, not tested on earlier versions (may work)
+Server engine: Purpur/Paper, versions from 1.19, not tested on earlier versions (may work)<br>
 Streaming service: Redis
 
 # Installation
