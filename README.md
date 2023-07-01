@@ -1,6 +1,11 @@
 # r5StaffChat
 Minecraft plugin - chat visible globally among instances of servers for staff members
 
+# Prerequisities
+
+Server engine: Purpur/Paper, versions from 1.19, not tested on earlier versions (may work)
+Streaming service: Redis
+
 # Installation
 
 1. Put jar file into plugins directory on all of your servers running Paper/Purpur version 1.19.4 or higher.
